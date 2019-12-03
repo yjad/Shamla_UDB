@@ -10,7 +10,9 @@ def mdb_2_sqlite(DB_file_name):
 
     db_file = DB_file_name.split(".")[0]
     db_file = db_file + ".sqlite"
-    os.remove(db_file)  # remove DB if exists
+    if os.path.exists(db_file):
+        os.remove(db_file)
+
     try:
         conn = sqlite3.connect(db_file)
     except Error as e:
@@ -46,4 +48,4 @@ def mdb_2_sqlite(DB_file_name):
     except Error as e:
         print ('Error closing conn/cursor: ', e)
 
-mdb_2_sqlite(r"aa.mdb")
+mdb_2_sqlite(r"D:\Yahia\Yahia\Python\training\Shamla\Books\151045.bok")

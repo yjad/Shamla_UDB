@@ -35,9 +35,10 @@ def exec_db_cmd(cmd):
     return rec_list
 
 
-def query_db(query, one=False):
+def query_db(db_file, query, one=False):
+    logging.debug(query)
     try:
-        conn = sqlite3.connect(DB_FILE_NAME)
+        conn = sqlite3.connect(db_file)
     except Error as e:
         print(f'error opening database: {e}')
         return None, ERROR_OPENING_DB
@@ -76,10 +77,10 @@ def categories_db(cmd):
     logging.debug(f"no of rows: {len(categ_list)}")
     return categ_list
 
-def books_db(cmd):
+def books_db(db_file, cmd):
 
     #return exec_db_cmd(cmd)
-    return query_db(cmd)
+    return query_db(db_file, cmd)
 
 
 def update_todo_db_record(rec):
