@@ -63,6 +63,6 @@ def mdb_2_sqlite(inp_file_name):
 
 
 
-mdb_2_sqlite(r"D:\Yahia\Yahia\Python\Shamla_UDB\books\4739.bok")
+#mdb_2_sqlite(r"D:\Yahia\Yahia\Python\Shamla_UDB\books\4739.bok")
 #mdb_2_sqlite(r"D:\Yahia\Yahia\Python\Shamla_UDB\books\4512.mdb")
-#mdb_2_sqlite(r"D:\Yahia\Yahia\Python\Shamla_UDB\books\4739.rar")
+mdb_2_sqlite(r"D:\Yahia\Yahia\Python\Shamla_UDB\books\4739.rar")

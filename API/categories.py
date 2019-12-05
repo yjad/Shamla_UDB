@@ -248,10 +248,6 @@ def bookinfo(bookid):
     if not os.path.exists(book_file):
         return jsonify({'response': -1, "reason": f'Invalid book number:{bookid}'})
 
-    status, keywords, limit, offset = validate_authors_request(request)
-    if status != 0:
-        abort(400, status)
-
     sql = f"select Bk FROM Main"
     page_list = query_db(book_file, sql)
     book_title = page_list[0].get("Bk")

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e41e4abb-d3da-4c13-a664-afd8b13d5b09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../books/151045.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4512.mdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4512.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4739-.bok" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4739.bok" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4739.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/4739.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../books/main.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mdb2sqlite/47391/4739.bok" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/132428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/132429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/146127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148091.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148097.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148271.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148486.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148533.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/148870.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/149015.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/149213.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/full/150303.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/132428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/132429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/146127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148091.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148097.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148271.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148486.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148533.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/148870.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/149015.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/149213.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/big/150303.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/132428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/132429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/146127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148091.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148097.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148271.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148486.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148533.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/148870.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/149015.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/149213.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/covers/thumbs/small/150303.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-bkp.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrapy.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/bokSQLiteConverter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/middlewares.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/pipelines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/spiders/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/spiders/booksinfospider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shamelaScrapper/نهاية الرتبة في طلب الحسبة لابن بسام.bok" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/categories.py" beforeDir="false" afterPath="$PROJECT_DIR$/../API/categories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/main.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mdb2sqlite/mdb_to_sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mdb2sqlite/mdb_to_sqlite.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1UYXvDJCQoCUKSRYfdAfyMh8YUp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e41e4abb-d3da-4c13-a664-afd8b13d5b09" name="Default Changelist" comment="" />
+      <created>1575534730089</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575534730089</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
