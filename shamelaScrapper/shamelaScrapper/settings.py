@@ -67,9 +67,11 @@ COOKIES_ENABLED = False
 ITEM_PIPELINES = {
     'shamelaScrapper.pipelines.SQLiteInsertPipeline': 300,
     'shamelaScrapper.pipelines.CoverPhotosPipeline': 400,
+    'shamelaScrapper.pipelines.rarFilePipeline': 500,
 }
-
-IMAGES_STORE = './covers'
+SQLITE_PATH = './media/Sqlite/data.sqlite'
+IMAGES_STORE = './media/covers'
+FILES_STORE = './media/rar_files'
 MEDIA_ALLOW_REDIRECTS = True
 IMAGES_THUMBS = {
     'small': (50, 50),

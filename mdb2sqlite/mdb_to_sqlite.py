@@ -1,6 +1,6 @@
 #! mdb_to_sqlite.py
 import sys, subprocess, os
-import sqlite3
+    import sqlite3
 from sqlite3 import Error
 import time
 import patoolib

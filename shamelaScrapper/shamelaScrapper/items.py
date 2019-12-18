@@ -10,6 +10,7 @@ import scrapy
 
 class ShamelaOnlineBookInfo(scrapy.Item):
     id = scrapy.Field()
+    time_stamp = scrapy.Field()
     view_count = scrapy.Field()
     date_added = scrapy.Field()
     tags = scrapy.Field()

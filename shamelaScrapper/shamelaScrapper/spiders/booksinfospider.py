@@ -4,7 +4,8 @@ from urllib.parse import urljoin
 from urllib.request import urlopen
 
 import scrapy
-import apsw
+#import apsw
+import sqlite3
 
 from shamelaScrapper.items import ShamelaOnlineBookInfo
 
@@ -15,57 +16,45 @@ class BooksInfoSpider(scrapy.Spider):
     def get_repository_from_response(self, url):
         return "/".join(url.split('/')[2:4])
 
-    def get_latest_book_in_db(self, repository):
-        connection = apsw.Connection(self.settings.get('SQLITE_PATH', 'data.sqlite'))
-        cursor = connection.cursor()
-        if repository == 'shamela.ws/index.php':
-            cursor.execute('select id,date_added from books_shamela_official order by date_added desc limit 1')
-        elif repository == 'shamela.ws/rep.php':
-            cursor.execute('select id,date_added from books_shamela_rep order by date_added desc limit 1')
-        book = ShamelaOnlineBookInfo()
-        book['id'], book['date_added'] = cursor.fetchone()
-        return book
+    # def get_latest_book_in_db(self, repository):
+    #     print ('from get_latest_book_in_db')
+    #     connection = sqlite3.Connection(self.settings.get('SQLITE_PATH', 'data.sqlite'))
+    #     cursor = connection.cursor()
+    #     if repository == 'shamela.ws/index.php':
+    #         cursor.execute('select id,date_added from books_shamela_official order by date_added desc limit 1')
+    #     elif repository == 'shamela.ws/rep.php':
+    #         cursor.execute('select id,date_added from books_shamela_rep order by date_added desc limit 1')
+    #     book = ShamelaOnlineBookInfo()
+    #     book['id'], book['date_added'] = cursor.fetchone()
+    #     connection.close()
+    #     return book
+    #
+    # def go_to_details_page(self, new_book):
+    #     latest_book = self.get_latest_book_in_db(new_book['repository'])
+    #     if latest_book['date_added'] > new_book['date_added']:
+    #         return False
+    #     else:
+    #         return True
 
-    def go_to_details_page(self, new_book):
-        latest_book = self.get_latest_book_in_db(new_book['repository'])
-        if latest_book['date_added'] > new_book['date_added']:
-            return False
-        else:
-            return True
-
-    def go_to_details_page_by_id(self, new_book):
-        connection = apsw.Connection(self.settings.get('SQLITE_PATH', 'data.sqlite'))
+    #  check if the book-id is in the DB
+    def book_already_loaded(self, new_book):
+        connection = sqlite3.Connection(self.settings.get('SQLITE_PATH', 'data.sqlite'))
         cursor = connection.cursor()
         if new_book['repository'] == 'shamela.ws/index.php':
             cursor.execute('select exists (select 1 from books_shamela_official where id=? LIMIT 1)', (new_book['id'],))
         elif new_book['repository'] == 'shamela.ws/rep.php':
             cursor.execute('select exists (select 1 from books_shamela_rep where id=? LIMIT 1)', (new_book['id'],))
-        return not bool(cursor.fetchone()[0])
+        b = bool(cursor.fetchone()[0])
+        connection.close()
+        return b
 
     def start_requests(self):
         urls = [
             'http://shamela.ws/index.php/search/last/page-1/',
-            'http://shamela.ws/rep.php/search/last/page-1'
+            #'http://shamela.ws/rep.php/search/last/page-1'
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
-
-    def parse(self, response):
-        went_to_details = False
-        for book_selector in response.css('td.regular-book'):
-            book = self.parse_overview(book_selector, response)
-            if self.go_to_details_page_by_id(book):
-                # read additional data
-                request = response.follow(book_selector.xpath('a/@href').extract_first(), self.parse_book_details)
-                request.meta['book'] = book
-                yield request
-            else:
-                yield book
-
-        if self.folow_next:
-            next_page = response.xpath("//a[text()='التالي']/@href").extract_first()
-            if next_page is not None:
-                yield response.follow(next_page, callback=self.parse)
 
     def parse_overview(self, book_selector, response):
         book = ShamelaOnlineBookInfo()
@@ -74,6 +63,26 @@ class BooksInfoSpider(scrapy.Spider):
         book['repository'] = self.get_repository_from_response(response.url)
         # book['pdf_link'] = urlopen()
         return book
+
+    def parse(self, response):
+        went_to_details = False
+        i = 0
+        for book_selector in response.css('td.regular-book'):
+            book = self.parse_overview(book_selector, response)
+            if not self.book_already_loaded(book):
+                # read additional data
+                request = response.follow(book_selector.xpath('a/@href').extract_first(), self.parse_book_details)
+                request.meta['book'] = book
+                yield request
+            else:
+                yield book
+            i = i + 1
+            if i > 17:
+                return
+        # if self.folow_next:
+        #     next_page = response.xpath("//a[text()='التالي']/@href").extract_first()
+        #     if next_page is not None:
+        #         yield response.follow(next_page, callback=self.parse)
 
     def parse_book_details(self, response):
         def select_info_desc_text(info_title):
@@ -121,6 +130,7 @@ class BooksInfoSpider(scrapy.Spider):
         cover_photo = response.xpath("//div[@id='content']/descendant::img[contains(@src,'cover')]/@src").extract_first()
         if cover_photo is not None:
             book['cover_photo'] = cover_photo
+        book['time_stamp'] = datetime.datetime.now()
 
         if (not pdf_link):
             yield book
